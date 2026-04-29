@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Frontend Showcase</title>
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+  <!-- ============ HERO ============ -->
+  <section id="hero" class="section section--hero" data-category="render">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span class="hero-title__line">Advanced</span>
+        <span class="hero-title__line hero-title__line--accent">Frontend</span>
+        <span class="hero-title__line">Showcase</span>
+      </h1>
+      <p class="hero-subtitle">WebGL Shaders &middot; Three.js &middot; CSS Scroll-Driven Animations &middot; Canvas &middot; Web Audio API</p>
+    </div>
+  </section>
+
+  <!-- ============ CATEGORY: RENDER ============ -->
+  <div class="category-divider" data-category="render">
+    <span class="category-tag">Render</span>
+    <span class="category-line"></span>
+  </div>
+
+  <!-- Three.js 3D Particle Galaxy -->
+  <section id="galaxy" class="section section--galaxy" data-category="render" data-lazy="galaxy">
+    <div class="section-header">
+      <h2 class="section-title">3D Particle Galaxy</h2>
+      <p class="section-desc">10,000+ particles with custom vertex &amp; fragment shaders</p>
+    </div>
+    <canvas id="galaxy-canvas"></canvas>
+    <div class="galaxy-controls">
+      <label class="galaxy-control">
+        <span>Arms</span>
+        <input type="range" id="galaxy-arms" min="1" max="8" value="3" step="1">
+      </label>
+      <label class="galaxy-control">
+        <span>Spread</span>
+        <input type="range" id="galaxy-spread" min="0.1" max="2" value="0.8" step="0.1">
+      </label>
+      <label class="galaxy-control">
+        <span>Size</span>
+        <input type="range" id="galaxy-size" min="0.5" max="5" value="2" step="0.1">
+      </label>
+    </div>
+  </section>
+
+  <!-- ============ CATEGORY: CSS ANIMATION ============ -->
+  <div class="category-divider" data-category="css">
+    <span class="category-tag">CSS Animation</span>
+    <span class="category-line"></span>
+  </div>
+
+  <!-- Scroll-Driven Animations Gallery -->
+  <section id="scroll" class="section section--scroll" data-category="css" data-lazy="scroll">
+    <div class="section-header">
+      <h2 class="section-title">Scroll-Driven Animations</h2>
+      <p class="section-desc">CSS scroll-timeline &middot; @property &middot; container queries &middot; @layer</p>
+    </div>
+    <div class="scroll-gallery">
+      <div class="scroll-card" data-index="0">
+        <div class="scroll-card__inner">
+          <div class="scroll-card__number">01</div>
+          <h3 class="scroll-card__title">scroll-timeline</h3>
+          <p class="scroll-card__text">CSS Scroll-Driven Animations API links animation progress to scroll position — no JavaScript scroll listeners needed.</p>
+          <div class="scroll-card__bar"></div>
+        </div>
+      </div>
+      <div class="scroll-card" data-index="1">
+        <div class="scroll-card__inner">
+          <div class="scroll-card__number">02</div>
+          <h3 class="scroll-card__title">@property</h3>
+          <p class="scroll-card__text">Register custom CSS properties with types, enabling transitions and animations on values that were previously impossible.</p>
+          <div class="scroll-card__bar"></div>
+        </div>
+      </div>
+      <div class="scroll-card" data-index="2">
+        <div class="scroll-card__inner">
+          <div class="scroll-card__number">03</div>
+          <h3 class="scroll-card__title">container queries</h3>
+          <p class="scroll-card__text">Responsive design at the component level — query the size of a container, not the viewport.</p>
+          <div class="scroll-card__bar"></div>
+        </div>
+      </div>
+      <div class="scroll-card" data-index="3">
+        <div class="scroll-card__inner">
+          <div class="scroll-card__number">04</div>
+          <h3 class="scroll-card__title">@layer</h3>
+          <p class="scroll-card__text">Cascade layers give authors explicit control over the cascade — no more fighting specificity.</p>
+          <div class="scroll-card__bar"></div>
+        </div>
+      </div>
+      <div class="scroll-card" data-index="4">
+        <div class="scroll-card__inner">
+          <div class="scroll-card__number">05</div>
+          <h3 class="scroll-card__title">view-timeline</h3>
+          <p class="scroll-card__text">View progress timelines tie animations to an element's visibility within a scrollport — fade in, slide, parallax.</p>
+          <div class="scroll-card__bar"></div>
+        </div>
+      </div>
+      <div class="scroll-card" data-index="5">
+        <div class="scroll-card__inner">
+          <div class="scroll-card__number">06</div>
+          <h3 class="scroll-card__title">CSS Nesting</h3>
+          <p class="scroll-card__text">Native CSS nesting — no preprocessor needed. Write scoped, hierarchical styles directly in CSS.</p>
+          <div class="scroll-card__bar"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SVG Morphing -->
+  <section id="svg-morph" class="section section--svg" data-category="css" data-lazy="svg-morph">
+    <div class="section-header">
+      <h2 class="section-title">SVG Path Morphing</h2>
+      <p class="section-desc">Smooth path interpolation &middot; stroke animation &middot; gradient mesh</p>
+    </div>
+    <div class="svg-container">
+      <svg id="morph-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="morph-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:var(--accent-1)" />
+            <stop offset="100%" style="stop-color:var(--accent-2)" />
+          </linearGradient>
+        </defs>
+        <path id="morph-path" fill="url(#morph-gradient)" stroke="none" />
+        <path id="stroke-path" fill="none" stroke="url(#morph-gradient)" stroke-width="2" stroke-dasharray="1000" stroke-dashoffset="1000" />
+      </svg>
+      <div class="svg-controls">
+        <button class="svg-btn" data-shape="circle">Circle</button>
+        <button class="svg-btn" data-shape="star">Star</button>
+        <button class="svg-btn" data-shape="heart">Heart</button>
+        <button class="svg-btn" data-shape="infinity">Infinity</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CATEGORY: INTERACTIVE ============ -->
+  <div class="category-divider" data-category="interactive">
+    <span class="category-tag">Interactive</span>
+    <span class="category-line"></span>
+  </div>
+
+  <!-- Canvas Generative Art -->
+  <section id="generative" class="section section--generative" data-category="interactive" data-lazy="generative">
+    <div class="section-header">
+      <h2 class="section-title">Canvas Generative Art</h2>
+      <p class="section-desc">Perlin noise flow field &middot; fractal tree &middot; particle physics</p>
+    </div>
+    <div class="generative-tabs">
+      <button class="gen-tab active" data-mode="flow">Flow Field</button>
+      <button class="gen-tab" data-mode="tree">Fractal Tree</button>
+      <button class="gen-tab" data-mode="particles">Particle Physics</button>
+    </div>
+    <canvas id="gen-canvas"></canvas>
+  </section>
+
+  <!-- Audio Visualizer -->
+  <section id="audio" class="section section--audio" data-category="interactive" data-lazy="audio">
+    <div class="section-header">
+      <h2 class="section-title">Audio Visualizer</h2>
+      <p class="section-desc">Web Audio API &middot; FFT analysis &middot; real-time Canvas rendering</p>
+    </div>
+    <div class="audio-controls">
+      <button id="audio-toggle" class="audio-btn">
+        <span class="audio-btn__icon">&#9654;</span>
+        <span class="audio-btn__text">Play Synth</span>
+      </button>
+      <div class="audio-presets">
+        <button class="audio-preset active" data-preset="synth">Synth</button>
+        <button class="audio-preset" data-preset="bass">Bass</button>
+        <button class="audio-preset" data-preset="ambient">Ambient</button>
+      </div>
+    </div>
+    <canvas id="audio-canvas"></canvas>
+  </section>
+
+  <!-- ============ CATEGORY: CSS FEATURES ============ -->
+  <div class="category-divider" data-category="features">
+    <span class="category-tag">CSS Features</span>
+    <span class="category-line"></span>
+  </div>
+
+  <!-- Footer: CSS Advanced Features -->
+  <footer id="footer" class="section section--footer" data-category="features">
+    <div class="section-header">
+      <h2 class="section-title">CSS Advanced Features</h2>
+      <p class="section-desc">anchor() &middot; popover &middot; @starting-style &middot; color-mix() &middot; oklch &middot; light-dark()</p>
+    </div>
+    <div class="footer-demo">
+      <div class="anchor-demo">
+        <button popovertarget="anchor-pop" class="anchor-trigger">Toggle Popover</button>
+        <div id="anchor-pop" popover class="anchor-popover">
+          <p>This uses the <strong>Popover API</strong> and CSS <strong>anchor()</strong> positioning.</p>
+          <p>Entry animation via <strong>@starting-style</strong>.</p>
+        </div>
+      </div>
+      <div class="color-demo">
+        <div class="color-swatch" style="--hue: 0">color-mix()</div>
+        <div class="color-swatch" style="--hue: 60">oklch()</div>
+        <div class="color-swatch" style="--hue: 120">light-dark()</div>
+        <div class="color-swatch" style="--hue: 200">Relative Color</div>
+      </div>
+      <div class="transition-demo">
+        <button id="discrete-toggle" class="discrete-btn">Toggle Discrete Transition</button>
+        <div id="discrete-target" class="discrete-target">
+          <p>This element uses <strong>discrete property transitions</strong> on <code>display</code> and <code>overlay</code>.</p>
+        </div>
+      </div>
+    </div>
+    <p class="footer-credit">Built with pure HTML, CSS, JavaScript &amp; Three.js — no frameworks.</p>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
